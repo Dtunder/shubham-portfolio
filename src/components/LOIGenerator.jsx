@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Copy, Download, FileText } from 'lucide-react';
+import { Copy, Download } from 'lucide-react';
 import './LOIGenerator.css';
 
 const LOIGenerator = () => {

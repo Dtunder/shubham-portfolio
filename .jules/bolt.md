@@ -1,0 +1,3 @@
+## 2026-07-30 - O(N*M) calculation in React render loop
+**Learning:** React functional components often have array methods (like `.filter()`, `.map()`, or `.reduce()`) run inside the render method using static data. In `src/components/Projects.jsx`, an array of objects `CATEGORIES` was being mapped over, and within that map, another static array `projectsData` was being filtered to count the items matching the category. This causes an O(N*M) calculation every time the component re-renders.
+**Action:** Pre-calculate the counts using standard JavaScript outside the React component if the data is static. If the data is dynamic, wrap it in a `useMemo` hook so it only recalculates when dependencies change.

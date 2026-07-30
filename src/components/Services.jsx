@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
 import { Bot, Shield, BarChart3 } from 'lucide-react';
 import './Services.css';
