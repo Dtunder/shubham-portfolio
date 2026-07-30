@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
 import { ArrowRight, Bot, Code2, Cpu } from 'lucide-react';
 import './Hero.css';

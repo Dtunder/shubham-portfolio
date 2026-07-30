@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 import './Projects.css';
@@ -148,12 +148,25 @@ const BADGE_CONFIG = {
   research: { label: '◉ Research', color: '#a855f7' },
 };
 
+// ⚡ Bolt Optimization: Pre-calculate category counts once on module load
+// instead of recalculating on every render within the map function
+const CATEGORY_COUNTS = CATEGORIES.reduce((acc, cat) => {
+  if (cat.id !== 'all') {
+    acc[cat.id] = projectsData.filter(p => p.category === cat.id).length;
+  }
+  return acc;
+}, {});
+
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all');
 
-  const filtered = activeFilter === 'all'
-    ? projectsData
-    : projectsData.filter(p => p.category === activeFilter);
+  // ⚡ Bolt Optimization: Memoize the filtered array so it doesn't recalculate
+  // if the component re-renders for reasons other than activeFilter changing
+  const filtered = useMemo(() => {
+    return activeFilter === 'all'
+      ? projectsData
+      : projectsData.filter(p => p.category === activeFilter);
+  }, [activeFilter]);
 
   return (
     <section id="projects" className="projects-section">
@@ -176,7 +189,7 @@ const Projects = () => {
               {cat.label}
               {cat.id !== 'all' && (
                 <span className="filter-count">
-                  {projectsData.filter(p => p.category === cat.id).length}
+                  {CATEGORY_COUNTS[cat.id]}
                 </span>
               )}
             </button>
