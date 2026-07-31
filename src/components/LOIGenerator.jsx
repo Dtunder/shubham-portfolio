@@ -1,7 +1,16 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Copy, Download, FileText } from 'lucide-react';
+import { Copy, Download } from 'lucide-react';
 import './LOIGenerator.css';
+
+// ⚡ Bolt Optimization: Cache Intl.DateTimeFormat outside the component
+// toLocaleDateString creates a new formatter instance every time it's called.
+// By caching it, we prevent an expensive synchronous operation on every keystroke.
+const dateFormatter = new Intl.DateTimeFormat('de-DE', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
 
 const LOIGenerator = () => {
   const [formData, setFormData] = useState({
@@ -21,11 +30,7 @@ const LOIGenerator = () => {
   };
 
   const generateLoiText = () => {
-    const dateToday = new Date().toLocaleDateString('de-DE', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
+    const dateToday = dateFormatter.format(new Date());
 
     const cName = formData.companyName || '[Firmenname]';
     const cAddr = formData.companyAddress || '[Adresse]';
