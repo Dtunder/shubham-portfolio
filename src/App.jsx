@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import { ArrowUpRight, Code2, Mail, CheckCircle2, FlaskConical, MapPin } from 'lucide-react'
+import ProjectArchive from './ProjectArchive'
 import './App.css'
 
 const categories = [
@@ -67,10 +68,10 @@ const projects = [
     url: null
   },
   {
-    title: 'Geodaten- und Webvisualisierung am ISA',
+    title: 'AquaRevier – WebGIS & Geodaten am ISA',
     category: 'software',
     evidence: 'Berufserfahrung · Institutsdaten nicht öffentlich',
-    summary: 'Strukturierte Datenintegration und interaktive Kartendarstellungen im RWTH-Kontext; keine internen Daten oder Zugänge veröffentlicht.',
+    summary: 'Arbeit an interaktiven Webkarten und Geodatenintegration im AquaRevier-/RWTH-Kontext. Live-App und interne Projektdaten sind nicht für die Portfolio-Verlinkung freigegeben.',
     stack: ['JavaScript', 'Leaflet', 'Geodaten'],
     url: null
   }
@@ -95,7 +96,8 @@ function App() {
         <div className="layout topbar-inner">
           <a className="brand" href="#start" aria-label="Startseite Shubham Jayswal"><span className="brand-mark">SJ</span><span>Shubham Jayswal</span></a>
           <nav className="nav" aria-label="Hauptnavigation">
-            <a href="#projekte">Projekte</a>
+            <a href="#projekte">Highlights</a>
+            <a href="#archiv">Archiv</a>
             <a href="#profil">Profil</a>
             <a href="#kontakt">Kontakt</a>
           </nav>
@@ -149,6 +151,8 @@ function App() {
           </div>
           <p className="evidence-note"><strong>Transparenz:</strong> Das Vorhandensein von Code oder Testdateien ist kein Nachweis für fehlerfreie Software, wissenschaftlich validierte Ergebnisse oder produktiven Unternehmenseinsatz. Dieses Portfolio unterscheidet öffentliche Arbeitsproben von nicht freigegebenen Forschungsarbeiten.</p>
         </section>
+
+        <ProjectArchive />
 
         <section className="profile" id="profil">
           <div className="layout">
