@@ -91,17 +91,26 @@ export default function ProjectArchive() {
 
   const filtered = useMemo(() => {
     const term = query.trim().toLocaleLowerCase('de-DE')
-    return allFamilies.filter(f => {
-      if (category !== 'Alle' && !f.entries.some(e => e.category === category)) return false
-      if (badgeFilter !== 'all' && !f.entries.some(e => e.badge === badgeFilter)) return false
-      if (!term) return true
-      return f.entries.some(e =>
-        [e.title, e.family, e.category, e.description, e.source, e.evidence, e.badge]
+    return allFamilies.map(f => {
+      // Match individual sources before constructing the displayed family.
+      // Otherwise a private/prototype match can inherit an unrelated verified badge or code link.
+      const entries = f.entries.filter(e => {
+        if (category !== 'Alle' && e.category !== category) return false
+        if (badgeFilter !== 'all' && e.badge !== badgeFilter) return false
+        if (!term) return true
+        return [e.title, e.family, e.category, e.description, e.source, e.evidence, e.badge]
           .join(' ')
           .toLocaleLowerCase('de-DE')
           .includes(term)
-      )
-    })
+      })
+      if (!entries.length) return null
+      return {
+        ...f,
+        entries,
+        representative: entries[0],
+        links: entries.filter(e => e.link && e.badge !== 'BROKEN / NOT PRESENTABLE')
+      }
+    }).filter(Boolean)
   }, [query, badgeFilter, category])
 
   const visible = expanded || query.trim() ? filtered : filtered.slice(0, 12)
@@ -114,10 +123,10 @@ export default function ProjectArchive() {
         <div className="archive-intro">
           <div>
             <p className="eyebrow">TRANSPARENTES PROJEKTARCHIV · AUDIT 2026</p>
-            <h2 id="archive-title">Vollständiges Register aller Arbeiten</h2>
+            <h2 id="archive-title">Projektregister mit Nachweisstatus</h2>
           </div>
           <p>
-            Vollständige Übersicht aller 98 inventarisierten Arbeiten aus GitHub, Google Drive und RWTH-Projekten.
+            Übersicht über {projectArchive.length} aktuell im Portfolio erfasste Einträge aus GitHub und dokumentierten Arbeiten.
             Jedes Projekt ist nach einem strengen 6-Stufen-Verifikationsschema eingestuft.
             <strong> Keine erfundenen Erfolge, keine ungeprüften Behauptungen.</strong>
           </p>
