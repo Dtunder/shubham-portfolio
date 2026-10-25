@@ -1,16 +1,47 @@
-# React + Vite
+# Shubham Jayswal · Engineering & Software Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**B.Sc. Maschinenbau, RWTH Aachen (abgeschlossen 2026)** · **M.Sc. Produktionstechnik (seit 10/2026)** · Aachen
 
-Currently, two official plugins are available:
+Dieses Repository enthält den Quellcode meiner [Portfolio-Webseite](https://dtunder.github.io/shubham-portfolio/). Die öffentliche Darstellung unterscheidet strikt zwischen **Codebeispielen**, **experimenteller Forschung** und **Hochschul-/Institutsarbeiten ohne veröffentlichte Rohdaten**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Vorzeigbarer öffentlicher Code
 
-## React Compiler
+| Beispiel | Im Repository vorhanden | Link |
+| --- | --- | --- |
+| IMU-Signalverarbeitung | Python-Filter, Konfiguration, Unit-Testdateien | [mecha-imu-filter](https://github.com/Dtunder/mecha-imu-filter) |
+| PID-Regelung | PID-Controller, Strecke/Simulation, Testskripte | [pid-controller-simulator](https://github.com/Dtunder/pid-controller-simulator) |
+| Reinforcement Learning | Gymnasium-CartPole-Umgebung mit Windstörungen, Testdateien | [rl-cartpole-custom](https://github.com/Dtunder/rl-cartpole-custom) |
+| Ökolopoly (experimentell) | RL-/Simulationsskripte und Evaluationsskripte | [Oekolopoly_Evo12](https://github.com/Dtunder/Oekolopoly_Evo12) |
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Hinweis:** Code ist vorhanden; Tests oder Leistungsangaben der Repositories wurden hier **nicht unabhängig ausgeführt oder bestätigt**. Die Links führen bewusst nicht zu Repositories, die nur aus einer Ankündigungs-README bestehen.
 
-## Expanding the ESLint configuration
+## Weitere ausgewählte Arbeiten
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Gleitlager-Bachelorarbeit (Note 2,0):** Verschleißlebensdauerprognose unter Mischreibung mittels Bayes'scher Inferenz, MATLAB- und Sensordatenanalyse.
+- **ISA / RWTH Aachen:** Technische Datenintegration und Web-/Geodatenvisualisierung mit HTML, JavaScript und Leaflet, seit 07/2026.
+- **MSE / WZL:** Gleitlager-Versuchstechnik, Schwingungsmesstechnik, Frequenzgänge und Messdatenauswertung.
+- **DED-Arc-Projektarbeit:** Modellgestützte Optimierung der Lagenauftragsgenauigkeit in der additiven Fertigung.
+- **NASIM:** Langjährige Simulations-Zeitreihen strukturiert aufbereitet und auf Plausibilität geprüft.
+- **Industrial Optimization:** Laufende Forschung zu reproduzierbaren Scheduling-/Solver-Vergleichen.
+
+Zu diesen Arbeiten werden **keine vertraulichen Rohdaten, internen Karten, Zugangsdaten oder unveröffentlichten Institutsergebnisse** bereitgestellt.
+
+## Portfolio lokal starten
+
+Voraussetzung: Node.js und npm.
+
+\`\`\`bash
+npm ci
+npm run dev
+\`\`\`
+
+Für den statischen Build: \`npm run build\`. Vite baut die Seite in \`dist/\`, und das Repository ist für den Unterpfad \`/shubham-portfolio/\` konfiguriert.
+
+## Transparenz und Nachweise
+
+- Keine pauschalen Behauptungen über produktiven Unternehmenseinsatz, veröffentlichte Forschungsarbeiten oder garantierte Leistungssteigerungen.
+- Projektergebnisse aus Repositories sind als selbst berichtete Angaben zu verstehen, sofern keine unabhängigen Nachweise vorliegen.
+- Testdateien sind keine Bestätigung, dass sämtliche Tests aktuell erfolgreich laufen.
+- Der Weg von **Aufgabe → eigene Umsetzung → nachvollziehbarer Nachweis** soll pro Arbeitsprobe sichtbar sein.
+
+**Kontakt:** [jayswalshubham13@gmail.com](mailto:jayswalshubham13@gmail.com) · [GitHub-Profil](https://github.com/Dtunder)
