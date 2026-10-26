@@ -206,8 +206,8 @@ export default function App() {
             <aside className="hero-portrait-card" aria-label="Porträt Shubham Jayswal">
               <div className="portrait-image-wrapper">
                 <picture>
-                  <source srcSet={portraitWebp} type="image/webp" />
                   <source srcSet={portraitWebp320} media="(max-width: 480px)" type="image/webp" />
+                  <source srcSet={portraitWebp} type="image/webp" />
                   <img
                     src={portraitJpg}
                     alt="Bewerbungsfoto von Shubham Jayswal (Maschinenbau B.Sc., RWTH Aachen)"
