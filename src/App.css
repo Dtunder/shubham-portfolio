@@ -777,16 +777,26 @@ h1 em {
     padding: 0 18px;
   }
   .topbar-inner {
-    height: 66px;
+    height: auto;
+    min-height: 66px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 8px;
   }
   .brand {
     font-size: 15px;
+    width: 100%;
+    justify-content: center;
   }
   .nav {
-    gap: 12px;
+    width: 100%;
+    min-width: 0;
+    justify-content: space-between;
+    gap: 6px;
   }
   .nav a {
-    font-size: 12px;
+    font-size: clamp(10px, 3vw, 12px);
   }
   .topbar-cta {
     display: none;
@@ -810,6 +820,14 @@ h1 em {
   }
   .contact-card {
     padding: 24px;
+  }
+  .contact-item {
+    min-width: 0;
+    padding: 16px 14px;
+  }
+  .contact-email-link {
+    display: block;
+    overflow-wrap: anywhere;
   }
 }
 
