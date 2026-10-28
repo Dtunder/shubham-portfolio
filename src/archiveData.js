@@ -1,5 +1,5 @@
 // Evidence-gated Portfolio Archive Data
-export const projectArchive = [
+const fullArchive = [
   {
     "id": "gh-vedic-astro-calculator",
     "title": "Astronomischer Ephemeriden- & Koordinatenrechner",
@@ -778,3 +778,21 @@ export const projectArchive = [
     "verified_tests": false
   }
 ];
+
+// Recruiter-facing curation: engineering, simulation and tooling stay visible;
+// trading experiments, unstarted concepts, duplicates and broken branches stay in fullArchive only.
+const hiddenBadges = new Set(['CONCEPT / IN PROGRESS', 'BROKEN / NOT PRESENTABLE'])
+const hiddenRepos = new Set([
+  'vedic-astro-calculator', 'Mindmap', 'resilient-ws-client',
+  'oekolopoly', 'Oekolopoly_Project', 'Oekolopoly_Sovereign_Final', 'nasuta-evo8',
+])
+const isShowcased = e =>
+  e.category !== 'Finanzen & Daten' &&
+  !(e.repoName || '').toLowerCase().startsWith('hft') &&
+  !hiddenBadges.has(e.badge) &&
+  !hiddenRepos.has(e.repoName)
+
+// The master-thesis simulator is real ongoing work, so it stays despite its in-progress badge.
+export const projectArchive = fullArchive.filter(e => isShowcased(e) || e.title.startsWith('Masterarbeits-Simulator'))
+export { fullArchive }
+

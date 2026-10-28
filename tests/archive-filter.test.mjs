@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import { test } from 'node:test'
-import { projectArchive } from '../src/archiveData.js'
+import { fullArchive, projectArchive } from '../src/archiveData.js'
 
 // Regression test for mixed-category and mixed-status project families.
 // The actual filter/group functions are extracted from the React component.
@@ -12,8 +12,9 @@ assert.ok(grouping && filtering, 'Archive grouping/filtering implementation must
 const rank = { 'VERIFIED DEMO': 0, 'VERIFIED CODE': 1, 'DOCUMENTED PROJECT': 2, PROTOTYPE: 3, 'CONCEPT / IN PROGRESS': 4, 'BROKEN / NOT PRESENTABLE': 5 }
 const groupByFamily = new Function('rank', grouping + '; return groupByFamily')(rank)
 const filter = new Function('allFamilies', 'query', 'badgeFilter', 'category', filtering)
+// The mixed-family fixtures (HFT) live only in the unfiltered inventory.
 function families({ query = '', badgeFilter = 'all', category = 'Alle' } = {}) {
-  return filter(groupByFamily(projectArchive), query, badgeFilter, category)
+  return filter(groupByFamily(fullArchive), query, badgeFilter, category)
 }
 
 test('category filter shows only matching HFT source and links', () => {
@@ -46,6 +47,15 @@ test('archive prose must not assert an incorrect static inventory count', () => 
 
 test('unfiltered archive preserves every entry and family', () => {
   const all = families()
-  assert.equal(all.length, new Set(projectArchive.map(e => e.family)).size)
-  assert.equal(all.reduce((n, f) => n + f.entries.length, 0), projectArchive.length)
+  assert.equal(all.length, new Set(fullArchive.map(e => e.family)).size)
+  assert.equal(all.reduce((n, f) => n + f.entries.length, 0), fullArchive.length)
+})
+
+test('showcased archive hides trading, concept and broken entries', () => {
+  assert.ok(projectArchive.length < fullArchive.length)
+  for (const e of projectArchive) {
+    assert.notEqual(e.category, 'Finanzen & Daten', e.title)
+    assert.ok(!(e.repoName || '').toLowerCase().startsWith('hft'), e.title)
+    assert.notEqual(e.badge, 'BROKEN / NOT PRESENTABLE', e.title)
+  }
 })
