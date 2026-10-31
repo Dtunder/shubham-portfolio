@@ -33,7 +33,7 @@ const highlightProjects = [
     evidence: '14/14 Unit-Tests bestanden (pytest)',
     summary: 'Implementierung und Vergleich von Kalman-, Komplementär- und Tiefpassfiltern zur Sensorfusions- und Orientierungsschätzung auf realitätsnahen Sensorsignalen.',
     stack: ['Python', 'Sensorfusion', 'Kalman-Filter', 'Pytest'],
-    url: 'https://github.com/Dtunder/mecha-imu-filter',
+    url: 'https://github.com/shubham-jayswal/mecha-imu-filter',
     githubText: 'GitHub Repo'
   },
   {
@@ -43,7 +43,7 @@ const highlightProjects = [
     evidence: '18/18 Unit-Tests bestanden (pytest)',
     summary: 'Diskreter PID-Controller mit Totzeitmodellierung, Anti-Windup und automatisierter Parameterabstimmung zur robusten Störunterdrückung.',
     stack: ['Python', 'Regelungstechnik', 'Simulation', 'Pytest'],
-    url: 'https://github.com/Dtunder/pid-controller-simulator',
+    url: 'https://github.com/shubham-jayswal/pid-controller-simulator',
     githubText: 'GitHub Repo'
   },
   {
@@ -63,7 +63,7 @@ const highlightProjects = [
     evidence: '33/33 Unit-Tests bestanden (pytest)',
     summary: 'Erweiterung der Standard-Gymnasium-CartPole-Umgebung um stochastische Seitenwind- und Turbulenzstörungen zur Evaluierung robuster Reinforcement-Learning-Agenten.',
     stack: ['Python', 'Gymnasium', 'Reinforcement Learning', 'Pytest'],
-    url: 'https://github.com/Dtunder/rl-cartpole-custom',
+    url: 'https://github.com/shubham-jayswal/rl-cartpole-custom',
     githubText: 'GitHub Repo'
   },
   {
@@ -73,7 +73,7 @@ const highlightProjects = [
     evidence: '12/12 Unit-Tests bestanden (pytest)',
     summary: 'Automatisierte Bereinigung, Deduplizierung und hierarchische Kostenaggregation von mehrstufigen CAD- und ERP-Stücklisten (BOM).',
     stack: ['Python', 'Datenbereinigung', 'Stücklisten', 'Pytest'],
-    url: 'https://github.com/Dtunder/bom-optimizer',
+    url: 'https://github.com/shubham-jayswal/bom-optimizer',
     githubText: 'GitHub Repo'
   },
   {
@@ -181,11 +181,11 @@ export default function App() {
                 </a>
                 <a
                   className="action action-secondary"
-                  href="https://github.com/Dtunder"
+                  href="https://github.com/shubham-jayswal"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  GitHub @Dtunder <ExternalLink size={16} aria-hidden="true" />
+                  GitHub @shubham-jayswal <ExternalLink size={16} aria-hidden="true" />
                 </a>
                 <a className="action action-outline" href="#kontakt">
                   <Mail size={16} aria-hidden="true" /> Kontakt aufnehmen
@@ -377,13 +377,13 @@ export default function App() {
               <div className="contact-item">
                 <span className="contact-item-label">GitHub-Profil</span>
                 <a
-                  href="https://github.com/Dtunder"
+                  href="https://github.com/shubham-jayswal"
                   className="contact-link"
                   target="_blank"
                   rel="noreferrer"
                 >
                   <Code2 size={16} aria-hidden="true" />
-                  github.com/Dtunder
+                  github.com/shubham-jayswal
                   <ArrowUpRight size={14} aria-hidden="true" />
                 </a>
                 <span className="contact-item-sub">Öffentliche Repositories & Tests</span>
@@ -398,7 +398,7 @@ export default function App() {
                 <Mail size={18} aria-hidden="true" /> E-Mail schreiben
               </a>
               <a
-                href="https://github.com/Dtunder/shubham-portfolio"
+                href="https://github.com/shubham-jayswal/shubham-portfolio"
                 className="action action-secondary"
                 target="_blank"
                 rel="noreferrer"
@@ -424,8 +424,8 @@ export default function App() {
           <div className="footer-right">
             <span>Stand: Oktober 2026</span>
             <span className="footer-bullet">•</span>
-            <a href="https://github.com/Dtunder" target="_blank" rel="noreferrer">
-              github.com/Dtunder
+            <a href="https://github.com/shubham-jayswal" target="_blank" rel="noreferrer">
+              github.com/shubham-jayswal
             </a>
           </div>
         </div>

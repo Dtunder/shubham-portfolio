@@ -2,16 +2,16 @@
 
 **B.Sc. Maschinenbau, RWTH Aachen (abgeschlossen 2026)** · **M.Sc. Produktionstechnik (seit 10/2026)** · Aachen
 
-Dieses Repository enthält den Quellcode meiner [Portfolio-Webseite](https://dtunder.github.io/shubham-portfolio/). Die öffentliche Darstellung unterscheidet strikt zwischen **Codebeispielen**, **experimenteller Forschung** und **Hochschul-/Institutsarbeiten ohne veröffentlichte Rohdaten**.
+Dieses Repository enthält den Quellcode meiner [Portfolio-Webseite](https://shubham-jayswal.github.io/shubham-portfolio/). Die öffentliche Darstellung unterscheidet strikt zwischen **Codebeispielen**, **experimenteller Forschung** und **Hochschul-/Institutsarbeiten ohne veröffentlichte Rohdaten**.
 
 ## Vorzeigbarer öffentlicher Code
 
 | Beispiel | Im Repository vorhanden | Link |
 | --- | --- | --- |
-| IMU-Signalverarbeitung | Python-Filter, Konfiguration, Unit-Testdateien | [mecha-imu-filter](https://github.com/Dtunder/mecha-imu-filter) |
-| PID-Regelung | PID-Controller, Strecke/Simulation, Testskripte | [pid-controller-simulator](https://github.com/Dtunder/pid-controller-simulator) |
-| Reinforcement Learning | Gymnasium-CartPole-Umgebung mit Windstörungen, Testdateien | [rl-cartpole-custom](https://github.com/Dtunder/rl-cartpole-custom) |
-| Ökolopoly (experimentell) | RL-/Simulationsskripte und Evaluationsskripte | [Oekolopoly_Evo12](https://github.com/Dtunder/Oekolopoly_Evo12) |
+| IMU-Signalverarbeitung | Python-Filter, Konfiguration, Unit-Testdateien | [mecha-imu-filter](https://github.com/shubham-jayswal/mecha-imu-filter) |
+| PID-Regelung | PID-Controller, Strecke/Simulation, Testskripte | [pid-controller-simulator](https://github.com/shubham-jayswal/pid-controller-simulator) |
+| Reinforcement Learning | Gymnasium-CartPole-Umgebung mit Windstörungen, Testdateien | [rl-cartpole-custom](https://github.com/shubham-jayswal/rl-cartpole-custom) |
+| Ökolopoly (experimentell) | RL-/Simulationsskripte und Evaluationsskripte | [Oekolopoly_Evo12](https://github.com/shubham-jayswal/Oekolopoly_Evo12) |
 
 **Hinweis:** Code ist vorhanden; Tests oder Leistungsangaben der Repositories wurden hier **nicht unabhängig ausgeführt oder bestätigt**. Die Links führen bewusst nicht zu Repositories, die nur aus einer Ankündigungs-README bestehen.
 
@@ -44,4 +44,4 @@ Für den statischen Build: \`npm run build\`. Vite baut die Seite in \`dist/\`, 
 - Testdateien sind keine Bestätigung, dass sämtliche Tests aktuell erfolgreich laufen.
 - Der Weg von **Aufgabe → eigene Umsetzung → nachvollziehbarer Nachweis** soll pro Arbeitsprobe sichtbar sein.
 
-**Kontakt:** [jayswalshubham13@gmail.com](mailto:jayswalshubham13@gmail.com) · [GitHub-Profil](https://github.com/Dtunder)
+**Kontakt:** [jayswalshubham13@gmail.com](mailto:jayswalshubham13@gmail.com) · [GitHub-Profil](https://github.com/shubham-jayswal)
